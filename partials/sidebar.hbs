@@ -33,23 +33,13 @@
     <div class="heading-lines">
       <h3 class="widget-title heading">Categories</h3>
     </div>
-    <ul class="list-dividers">
-      <li>
-        <a href="#">Lifestyle</a><span>(8)</span>
-      </li>
-      <li>
-        <a href="#">Travel</a><span>(14)</span>
-      </li>
-      <li>
-        <a href="#">Beauty</a><span>(5)</span>
-      </li>
-      <li>
-        <a href="#">Music</a><span>(3)</span>
-      </li>
-      <li>
-        <a href="#">Food</a><span>(7)</span>
-      </li>
-    </ul>
+    {{#get "tags" limit="5" include="count.posts" order="count.posts desc"}}
+        <ul class="list-dividers">
+            {{#foreach tags}}
+                <li><a href="/tag/{{slug}}">{{name}} <span>({{count.posts}})</span></a></li>
+            {{/foreach}}
+        </ul>
+    {{/get}}
   </div>
 
   <!-- Ad banner -->
@@ -65,76 +55,30 @@
       <h3 class="widget-title heading">Recent Posts</h3>
     </div>
     <div class="entry-list w-thumbs">
-      <ul class="posts-list list-dividers">
-        <li class="entry-li">
-          <article class="post-small clearfix">
-            <div class="entry-img">
-              <a href="blog-single.html">
-                <img src="img/recent_1.jpg" alt="">
-              </a>
-            </div>
-            <div class="entry">
-              <h3 class="entry-title"><a href="magazine-single-article.html">Best Beaches in Sydney</a></h3>
-              <ul class="entry-meta list-inline">
-                <li class="entry-date">
-                  <a href="#">19 Mar, 2016</a>
-                </li>
-              </ul>
-            </div>
-          </article>
-        </li>
-        <li class="entry-li">
-          <article class="post-small clearfix">
-            <div class="entry-img">
-              <a href="blog-single.html">
-                <img src="img/recent_2.jpg" alt="">
-              </a>
-            </div>
-            <div class="entry">
-              <h3 class="entry-title"><a href="magazine-single-article.html">First Summer Ice Cream</a></h3>
-              <ul class="entry-meta list-inline">
-                <li class="entry-date">
-                  <a href="#">16 Mar, 2016</a>
-                </li>
-              </ul>
-            </div>
-          </article>
-        </li>
-        <li class="entry-li">
-          <article class="post-small clearfix">
-            <div class="entry-img">
-              <a href="blog-single.html">
-                <img src="img/recent_3.jpg" alt="">
-              </a>
-            </div>
-            <div class="entry">
-              <h3 class="entry-title"><a href="magazine-single-article.html">Best Hat for Travel</a></h3>
-              <ul class="entry-meta list-inline">
-                <li class="entry-date">
-                  <a href="#">16 Mar, 2016</a>
-                </li>
-              </ul>
-            </div>
-          </article>
-        </li>
-        <li class="entry-li">
-          <article class="post-small clearfix">
-            <div class="entry-img">
-              <a href="blog-single.html">
-                <img src="img/recent_4.jpg" alt="">
-              </a>
-            </div>
-            <div class="entry">
-              <h3 class="entry-title"><a href="magazine-single-article.html">New Look is Arrived</a></h3>
-              <ul class="entry-meta list-inline">
-                <li class="entry-date">
-                  <a href="#">16 Mar, 2016</a>
-                </li>
-              </ul>
-            </div>
-          </article>
-        </li>
-      </ul>
+      {{#get "posts" limit="5" order="published_at desc"}}
+        <ul class="posts-list list-dividers">
+          {{#foreach posts}}
+            <li class="entry-li">
+              <article class="post-small clearfix">
+                <div class="entry-img">
+                  <a href="{{url}}">
+                    <img src="{{img_url feature_image}}" alt="">
+                  </a>
+                </div>
+                <div class="entry">
+                  <h3 class="entry-title"><a href="magazine-single-article.html">{{title}}</a></h3>
+                  <ul class="entry-meta list-inline">
+                    <li class="entry-date">
+                      <a href="{{url}}">{{date published_at format="MMMM DD, YYYY"}}</a>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+          {{/foreach}}
+        </ul>
+      {{/get}}
+
     </div>
   </div>
 

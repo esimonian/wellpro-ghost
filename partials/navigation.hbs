@@ -1,14 +1,5 @@
 {{! Navigation Docs: https://themes.ghost.org/docs/navigation }}
 
-<nav class="site-nav">
-	<ul class="primary-nav">
-		{{#foreach navigation}}
-		<li{{#if current}} class="current"{{/if}}>
-			<a href="{{url absolute="true"}}">{{label}}</a>
-		</li>
-		{{/foreach}}
-	</ul>
-
 	<ul class="social-nav">
 		{{#if @labs.subscribers}}
 			<li><a href="{{@blog.url}}/subscribe/">Subscribe</a></li>
@@ -23,3 +14,71 @@
 		{{/if}}
 	</ul>
 </nav>
+
+<nav class="navbar navbar-fixed-top">
+<div class="navigation">
+  <div class="container relative">
+    <div class="row">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div> <!-- end navbar-header -->
+      <!-- side menu -->
+      <div class="side-menu nav-left hidden-sm hidden-xs">
+        <div class="nav-inner">
+          <div class="nav-search-wrap hidden-sm hidden-xs">
+            <a href="#" class="nav-search search-trigger">
+              <i class="icon icon_search"></i>
+            </a>
+          </div>
+        </div>
+      </div> <!-- end side menu -->
+      <div class="col-md-12 nav-wrap">
+        <div class="collapse navbar-collapse text-center" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+						{{#foreach navigation}}
+							<li{{#if current}} class="active"{{/if}}>
+								<a href="{{url absolute="true"}}">{{label}}</a>
+							</li>
+						{{/foreach}}
+
+            <li id="mobile-search" class="hidden-lg hidden-md">
+              <form method="get" class="mobile-search">
+                <input type="search" class="form-control" placeholder="Search...">
+                <button type="submit" class="search-button">
+                  <i class="icon icon_search"></i>
+                </button>
+              </form>
+            </li>
+
+          </ul> <!-- end menu -->
+        </div> <!-- end collapse -->
+      </div> <!-- end col -->
+
+      <!-- side menu -->
+      <div class="side-menu right mobile-left-align">
+        <div class="nav-inner menu-socials social-icons">
+          <div class="right">
+						{{#if @labs.subscribers}}
+							<a href="{{@blog.url}}/subscribe/">Subscribe</a>
+						{{else}}
+							<a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" target="_blank" rel="noopener"><i class="fa fa-rss"></i></a>
+						{{/if}}
+						{{#if @blog.facebook}}
+							<a href="{{facebook_url}}" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>
+						{{/if}}
+						{{#if @blog.twitter}}
+							<a href="{{twitter_url}}" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+						{{/if}}
+          </div>
+        </div>
+      </div> <!-- end side menu -->
+
+    </div> <!-- end row -->
+  </div> <!-- end container -->
+</div> <!-- end navigation -->
+</nav> <!-- end navbar -->

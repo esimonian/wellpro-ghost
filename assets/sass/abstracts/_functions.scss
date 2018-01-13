@@ -1,0 +1,18 @@
+/// Step Golden Number
+/// @param {Number} $steps - Number of steps
+/// @return {Number}
+@function step-phi($steps) {
+	$result: 1;
+	@while $steps > 0 {
+		$result: $result * $phi;
+		$steps: $steps - 1;
+	}
+	@return $result;
+}
+
+/// Retrieve z-index from $z-indexes map
+/// @param {String} $key
+/// @return {Number}
+@function z-index($key) {
+	@return map-get($z-indexes, $key);
+}

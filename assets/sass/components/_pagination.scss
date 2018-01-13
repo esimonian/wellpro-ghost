@@ -1,0 +1,14 @@
+.pagination {
+	text-align: center;
+	margin: ($phi * 1rem) 0;
+
+	> span,
+	a {
+		display: inline-block;
+		margin: 0 1em;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}

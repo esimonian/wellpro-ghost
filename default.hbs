@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>{{meta_title}}</title>
+	<meta name="theme-color" content="#34495e">
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}">
+
+	{{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+	<!-- Preloader -->
+  <div class="loader-mask">
+    <div class="loader">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+	<div class="main-wrapper oh">
+		{{> header}}
+		<main class="container">
+			{{{body}}}
+		</main>
+
+		<footer class="site-footer">
+			<div class="container">
+				<p class="copyrights"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</p>
+				<p class="powered-by">Powered by <a href="https://ghost.org/">Ghost</a></p>
+			</div>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="{{asset "js/dist/main.min.js"}}"></script>
+
+	{{{block "scripts"}}}
+
+	{{ghost_foot}}
+</body>
+</html>

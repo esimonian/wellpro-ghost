@@ -1,0 +1,44 @@
+{
+	"name": "blank",
+	"description": "A boilerplate for ghost themes",
+	"version": "1.0.0",
+	"engines": {
+		"ghost": ">=1.2.0"
+	},
+	"license": "MIT",
+	"screenshots": {
+		"desktop": "assets/screenshot-desktop.jpg",
+		"mobile": "assets/screenshot-mobile.jpg"
+	},
+	"author": {
+		"name": "Waqas Ibrahim",
+		"email": "waqas.abrahim@gmail.com",
+		"url": "https://waqasibrahim.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/WaqasIbrahim/blank-ghost-theme.git"
+	},
+	"bugs": "https://github.com/WaqasIbrahim/blank-ghost-theme/issues",
+	"devDependencies": {
+		"eslint": "^4.13.1",
+		"eslint-plugin-json": "^1.2.0",
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^4.0.0",
+		"gulp-cssnano": "^2.1.2",
+		"gulp-livereload": "^3.8.1",
+		"gulp-minify": "^2.1.0",
+		"gulp-notify": "^3.0.0",
+		"gulp-plumber": "^1.1.0",
+		"gulp-sass": "^3.1.0",
+		"gulp-sourcemaps": "^2.6.1",
+		"gulp-zip": "^4.0.0"
+	},
+	"config": {
+		"posts_per_page": 6
+	},
+	"dependencies": {
+		"gulp-concat": "^2.6.1",
+		"gulp-order": "^1.1.1"
+	}
+}

@@ -1,0 +1,25 @@
+{{! Navigation Docs: https://themes.ghost.org/docs/navigation }}
+
+<nav class="site-nav">
+	<ul class="primary-nav">
+		{{#foreach navigation}}
+		<li{{#if current}} class="current"{{/if}}>
+			<a href="{{url absolute="true"}}">{{label}}</a>
+		</li>
+		{{/foreach}}
+	</ul>
+
+	<ul class="social-nav">
+		{{#if @labs.subscribers}}
+			<li><a href="{{@blog.url}}/subscribe/">Subscribe</a></li>
+		{{else}}
+			<li><a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" target="_blank" rel="noopener">RSS</a></li>
+		{{/if}}
+		{{#if @blog.facebook}}
+			<li><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></li>
+		{{/if}}
+		{{#if @blog.twitter}}
+			<li><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></li>
+		{{/if}}
+	</ul>
+</nav>

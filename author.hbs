@@ -1,0 +1,37 @@
+{{!< default}}
+
+{{! Author Context Docs: https://themes.ghost.org/docs/author-context }}
+
+{{#author}}
+<section class="banner">
+	{{#if profile_image}}
+		<div class="author-thumb">
+			<img src="{{profile_image}}" alt="{{name}}">
+		</div>
+	{{/if}}
+	<h1>{{name}}</h1>
+	{{#if bio}}
+		<h2>{{bio}}</h2>
+	{{/if}}
+	<ul>
+		{{#if website}}
+			<li><a href="{{website}}">Website</a></li>
+		{{/if}}
+		{{#if twitter}}
+			<li><a href="{{twitter_url}}">Twitter</a></li>
+		{{/if}}
+		{{#if facebook}}
+			<li><a href="{{facebook_url}}">Facebook</a></li>
+		{{/if}}
+		<li><a href="http://cloud.feedly.com/#subscription/feed/{{url absolute="true"}}/rss/">RSS</a></li>
+	</ul>
+
+	{{#if cover_image}}
+		<img src="{{cover_image}}" alt="{{name}}">
+	{{/if}}
+</section>
+{{/author}}
+
+<section class="posts">
+	{{> loop}}
+</section>

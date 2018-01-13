@@ -1,0 +1,43 @@
+{{!< default }}
+
+{{! Single page docs: https://themes.ghost.org/docs/post }}
+
+{{#post}}
+	<article class="{{post_class}}">
+		{{#if feature_image}}
+		<figure><img src="{{feature_image}}" alt="{{title}}"></figure>
+		{{/if}}
+
+		<header>
+			<h1>{{title}}</h1>
+		</header>
+
+		<section class="content">
+			{{content}}
+		</section>
+	</article>
+{{/post}}
+
+
+{{#contentFor "scripts"}}
+<script src="{{asset "js/vendor/reframe.min.js"}}"></script>
+<script>
+	(function() {
+		'use strict';
+
+		// Responsive Embeds
+		var selectors = [
+			'iframe[src*="player.vimeo.com"]',
+			'iframe[src*="youtube.com"]',
+			'iframe[src*="youtube-nocookie.com"]',
+			'iframe[src*="kickstarter.com"][src*="video.html"]',
+			'object',
+			'embed'
+		];
+
+		selectors.forEach(function(selector) {
+			reframe(selector);
+		});
+	})();
+</script>
+{{/contentFor}}

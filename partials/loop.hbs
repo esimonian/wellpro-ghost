@@ -1,0 +1,12 @@
+{{! Post Context Docs: https://themes.ghost.org/docs/post }}
+
+{{#foreach posts}}
+<article class="{{post_class}}">
+	<h2><a href="{{url}}">{{title}}</a></h2>
+	<p>{{excerpt words="100"}}...</p>
+</article>
+{{/foreach}}
+
+{{! Pagination Docs: https://themes.ghost.org/docs/pagination }}
+
+{{pagination}}

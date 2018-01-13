@@ -14,6 +14,9 @@
             <article>
               <a href="{{url}}" class="entry-img">
                 <img src="{{img_url feature_image}}" alt="">
+                {{#primary_tag}}
+          			    <a href="{{url}}" class="entry-category">{{name}}</a>
+          			{{/primary_tag}}
                 {{#if primary_tag}}
                     <span class="entry-category">{{primary_tag.name}}</span>
                 {{/if}}

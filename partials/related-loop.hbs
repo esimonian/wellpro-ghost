@@ -1,0 +1,32 @@
+{{#if primary_tag}}
+  {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+    <div class="related-posts mt-40">
+      <div class="heading-lines mb-30">
+        <h3 class="heading small">Related Posts</h3>
+      </div>
+      <div class="row">
+        {{#foreach posts}}
+          <div class="col-sm-4">
+            <article class="entry-item">
+              <div class="entry-img">
+                <a href="{{url}}">
+                  <img src="{{img_url feature_image}}" alt="">
+                </a>
+              </div>
+              <h4 class="entry-title">
+                <a href="blog-single.html">Missing the Bahamas</a>
+              </h4>
+              <div class="entry-meta-wrap clearfix">
+                <ul class="entry-meta">
+                  <li class="entry-date">
+                    <a href="{{url}}">{{date published_at format="MMMM DD, YYYY"}}</a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        {{/foreach}}
+      </div>
+    </div>
+    {{/get}}
+{{/if}}

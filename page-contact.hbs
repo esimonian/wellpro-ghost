@@ -1,38 +1,46 @@
 {{!< default}}
 
 {{#post}}
-<div class="{{post_class}}">
-	<header>
-		<h1>{{title}}</h1>
-	</header>
+	<!-- Content -->
+	<section class="section-wrap contact pt-mdm-60">
+	  <div class="container relative">
+	    <div class="text-center">
+	      <h1 class="heading underline-title uppercase">Contact</h1>
+	    </div>
+	    <div class="row">
 
-	<section class="content">
-		{{content}}
-	</section>
+	      <div class="col-sm-10 col-sm-offset-1">
+	        <img src="img/contact.jpg" class="img-fw mb-30" alt="">
+	        <p>
+	         {{content}}
+	        </p>
 
-	<section class="contact-forn">
-		<form action="https://formspree.io/your@email.com" method="POST">
-			<p>
-				<label for="name">Your Name</label>
-				<input type="text" name="name" id="name" required maxlength="120">
-			</p>
-			<p>
-				<label for="email">Your Email</label>
-				<input type="email" name="_replyto" id="email" required maxlength="120">
-			</p>
-			<p>
-				<label for="phone">Your Phone <small>(Optional)</small></label>
-				<input type="tel" name="phone" id="phone" maxlength="24">
-			</p>
-			<p>
-				<label for="message">Your Message</label>
-				<textarea name="message" id="message" rows="8" required maxlength="1200"></textarea>
-			</p>
-			<p>
-				<input type="text" name="_gotcha" style="display:none">
-				<input type="submit" class="button" value="Send message">
-			</p>
-		</form>
-	</section>
-</div>
+	        <!-- contact form -->
+	        <div class="contact-form mt-30">
+	          <form id="contact-form" action="#">
+	            <div class="row row-16">
+	              <div class="col-md-4">
+	                <input name="name" id="name" type="text" placeholder="Name*">
+	              </div>
+	              <div class="col-md-4">
+	                <input name="mail" id="mail" type="email" placeholder="E-mail*">
+	              </div>
+	              <div class="col-md-4">
+	                <input name="subject" id="subject" type="text" placeholder="Subject">
+	              </div>
+	              <div class="col-md-12">
+	                <textarea name="comment" id="comment" placeholder="Message" rows="8"></textarea>
+	              </div>
+	            </div>
+
+	            <input type="submit" class="btn btn-lg btn-color mt-20" value="Send" id="submit-message">
+	            <div id="msg" class="message"></div>
+	          </form>
+	        </div>
+
+	      </div>
+	    </div> <!-- end row -->
+
+	  </div> <!-- end container -->
+	</section> <!-- end content -->
 {{/post}}

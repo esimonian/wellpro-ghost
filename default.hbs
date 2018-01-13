@@ -79,6 +79,13 @@
 		});
 	</script>
 
+	{{#if pagination.pages}}
+	<script>
+			var maxPages = parseInt('{{pagination.pages}}');
+	</script>
+	<script src="{{asset "js/infinitescroll.js"}}"></script>
+	{{/if}}
+
 	{{{block "scripts"}}}
 
 	{{ghost_foot}}

@@ -1,5 +1,16 @@
 {{!< default }}
-
+<section class="header-wrap hero-section bg-light">
+  <div class="container">
+    <div class="logo-container text-center">
+      <div class="logo-wrap">
+        <a href="/">
+          <img class="logo-dark" src="{{asset "img/logo_small.png"}}" alt="logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{{> recent-loop}}
 <section class="posts">
 	{{> loop}}
 </section>

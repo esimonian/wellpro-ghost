@@ -1,0 +1,34 @@
+{{! Post Context Docs: https://themes.ghost.org/docs/post }}
+<!-- Latest Stories -->
+      <section class="section-wrap latest-stories pb-0">
+        <div class="container-fluid nopadding">
+
+          <div class="heading-row text-center mb-40">
+            <h2 class="heading uppercase small">Latest Stories</h2>
+          </div>
+
+          <div id="main-slider" class="flickity-slider-wrap">
+            {{#get "posts" filter="featured:true" limit="all" as |featured|}}
+              {{#foreach featured}}
+                <div class="gallery-cell">
+                  <article>
+                    <a href="{{url}}" class="entry-img">
+                      <img src="{{img_url feature_image}}" alt="">
+                      {{#if primary_tag}}
+                          <span class="post-card-tags">{{primary_tag.name}}</span>
+                      {{/if}}
+                      <span class="entry-category">{{tags.[0]}}</span>
+                    </a>
+
+                    <div class="entry text-center">
+                      <h4 class="entry-title uppercase"><a href="blog-single.html">{{title}}</a></h4>
+                      <span class="entry-date">{{date published_at format="MMMM DD, YYYY"}}</span>
+                    </div>
+                  </article>
+                </div>
+              {{/foreach}}
+            {{/get}}
+          </div>
+        </div>
+      </section>
+<!-- end latest stories -->

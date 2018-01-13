@@ -1,10 +1,63 @@
 {{! Post Context Docs: https://themes.ghost.org/docs/post }}
 
 {{#foreach posts}}
-<article class="{{post_class}}">
-	<h2><a href="{{url}}">{{title}}</a></h2>
-	<p>{{excerpt words="100"}}...</p>
-</article>
+	<!-- large post -->
+	<article class="entry-item large-post">
+	  <div class="entry-header">
+			{{#primary_tag}}
+			    <a href="{{url}}" class="entry-category">{{name}}</a>
+			{{/primary_tag}}
+	    <h2 class="entry-title">
+	      <a href="{{url}}">{{title}}</a>
+	    </h2>
+	  </div>
+	  <div class="entry-img">
+	    <a href="{{url}}">
+	      <img src="{{img_url feature_image}}" alt="">
+	    </a>
+	  </div>
+	  <div class="entry-wrap">
+	    <div class="entry">
+
+	      <div class="entry-content">
+	        <p>{{excerpt words="100"}}</p>
+	        <div class="text-center">
+	          <a href="{{url}}" class="read-more underline-link">Read More</a>
+	        </div>
+	      </div>
+
+	      <div class="entry-meta-wrap clearfix">
+	        <ul class="entry-meta">
+	          <li class="entry-date">
+	            <a href="{{url}}">August 30, 2016</a>
+	          </li>
+	          <li class="entry-comments">
+	            <a href="{{url}}">2 Comments</a>
+	          </li>
+	        </ul>
+
+	        <div class="social-icons right">
+	          <a href="#">
+	            <i class="fa fa-instagram"></i>
+	          </a>
+	          <a href="#">
+	            <i class="fa fa-facebook"></i>
+	          </a>
+	          <a href="#">
+	            <i class="fa fa-twitter"></i>
+	          </a>
+	          <a href="#">
+	            <i class="fa fa-pinterest-p"></i>
+	          </a>
+	          <a href="#">
+	            <i class="fa fa-heart"></i>
+	          </a>
+	        </div>
+	      </div>
+
+	    </div>
+	  </div>
+	</article> <!-- end large post -->
 {{/foreach}}
 
 {{! Pagination Docs: https://themes.ghost.org/docs/pagination }}

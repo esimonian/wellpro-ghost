@@ -1,16 +1,18 @@
 {{!< default }}
-<section class="header-wrap hero-section bg-light">
-  <div class="container">
-    <div class="logo-container text-center">
-      <div class="logo-wrap">
-        <a href="/">
-          <img class="logo-dark" src="{{asset "img/logo_small.png"}}" alt="logo">
-        </a>
+
+  {{> recent-loop}}
+  <!-- Content -->
+  <section class="content blog-standard">
+    <div class="container relative">
+      <div class="row">
+        <!-- post content -->
+        <div class="col-md-9 post-content mb-50">
+          <section class="posts">
+          	{{> loop}}
+          </section>
+        </div>
+        {{> sidebar}}
       </div>
     </div>
-  </div>
-</section>
-{{> recent-loop}}
-<section class="posts">
-	{{> loop}}
-</section>
+  </section>
+</div>

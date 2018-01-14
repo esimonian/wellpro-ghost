@@ -1,4 +1,4 @@
-<header class="nav-type-1 dark-nav">
+<header class="nav-type-1 dark-nav sticky-nav">
   <!-- Fullscreen search -->
   <div class="search-wrap">
     <div class="search-inner">
@@ -14,8 +14,34 @@
     </div>
     <i class="icon icon_close search-close" id="search-close"></i>
   </div> <!-- end fullscreen search -->
+    <nav class="navbar navbar-fixed-top">
+      <div class="navigation">
+        <div class="container relative">
+          <div class="row">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div> <!-- end navbar-header -->
+            <!-- side menu -->
+            <div class="side-menu nav-left hidden-sm hidden-xs">
+              <div class="nav-inner">
+                <div class="nav-search-wrap hidden-sm hidden-xs">
+                  <a href="#" class="nav-search search-trigger">
+                    <i class="icon icon_search"></i>
+                  </a>
+                </div>
+              </div>
+            </div> <!-- end side menu -->
 
-  {{#if @blog.navigation}}
-      {{navigation}}
-  {{/if}}
+            {{#if @blog.navigation}}
+                {{navigation}}
+            {{/if}}
+        </div> <!-- end row -->
+      </div> <!-- end container -->
+    </div> <!-- end navigation -->
+  </nav> <!-- end navbar -->
 </header>

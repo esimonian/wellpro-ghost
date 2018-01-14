@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>{{meta_title}}</title>
+	<meta name="theme-color" content="#34495e">
+
+	<link href='https://fonts.googleapis.com/css?family=Raleway:300,400%7COpen+Sans:400,400i,700%7CLibre+Baskerville:400i' rel='stylesheet'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}">
+
+	{{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+	<!-- Preloader -->
+  <div class="loader-mask">
+    <div class="loader">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+	<div class="main-wrapper oh">
+		{{> transparent-header}}
+		
+
+				{{{body}}}
+
+			</div>
+			{{> footer}}
+		</main>
+
+
+	</div>
+
+	<script type="text/javascript" src="{{asset "js/dist/main.min.js"}}"></script>
+
+	{{#if pagination.pages}}
+	<script>
+			var maxPages = parseInt('{{pagination.pages}}');
+	</script>
+	<script src="{{asset "js/infinitescroll.js"}}"></script>
+	{{/if}}
+
+	{{{block "scripts"}}}
+
+	{{ghost_foot}}
+</body>
+</html>

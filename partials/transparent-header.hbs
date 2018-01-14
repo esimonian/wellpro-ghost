@@ -1,0 +1,34 @@
+<header class="nav-type-1 transparent sticky-nav">
+  <div class="navigation">
+    <nav class="navbar navbar-fixed-top">
+      <div class="navigation">
+        <div class="container relative">
+
+          <div class="row">
+
+            <div class="navbar-header">
+              <!-- Logo -->
+              <div class="logo-container">
+                <div class="logo-wrap">
+                  <a href="index.html">
+                    <img class="logo" src="{{asset "img/header-logo.png"}}" alt="logo">
+                  </a>
+                </div>
+              </div>
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div> <!-- end navbar-header -->
+
+            {{#if @blog.navigation}}
+                {{navigation}}
+            {{/if}}
+          </div> <!-- end row -->
+        </div> <!-- end container -->
+      </div> <!-- end navigation -->
+    </nav> <!-- end navbar -->
+  </div>
+</header>

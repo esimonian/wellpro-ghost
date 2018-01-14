@@ -1,23 +1,30 @@
-{{!< default}}
+{{!< default-tag}}
 
 {{! Tags Context Docs: https://themes.ghost.org/docs/tags }}
 
 {{#tag}}
-<section class="banner">
-	<h1>{{name}}</h1>
-	<h2>
-		{{#if description}}
-			{{description}}
-		{{else}}
-			A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-		{{/if}}
-	</h2>
-	{{#if feature_image}}
-		<img src="{{feature_image}}" alt="{{name}}">
-	{{/if}}
+<section class="header-wrap hero-section hero-img" style="background-image: url({{feature_image}})">
+	<div class="container">
+		<div class="hero-holder">
+			<h1 class="white mb-0">{{name}}</h1>
+			{{#if description}}
+				<h1>{{description}}</h1>
+			{{/if}}
+		</div>
+	</div>
 </section>
+<!-- Content -->
+<section class="content blog-standard no-sidebar">
+  <div class="container relative">
+    <div class="row">
+
+      <!-- post content -->
+      <div class="col-md-12 post-content mb-50">
+
+        <!-- grid posts -->
+        <div class="row items-grid">
 {{/tag}}
 
-<section class="posts">
-	{{> loop}}
-</section>
+				<section class="posts">
+					{{> tag-loop}}
+				</section>

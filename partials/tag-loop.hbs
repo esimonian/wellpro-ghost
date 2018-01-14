@@ -1,0 +1,21 @@
+{{#foreach posts}}
+  <div class="col-sm-4">
+    <article class="entry-item">
+      <div class="entry-img">
+        <a href="{{url}}">
+          <img src="{{img_url feature_image}}" alt="">
+        </a>
+      </div>
+      <h4 class="entry-title">
+        <a href="{{url}}">{{title}}</a>
+      </h4>
+      <div class="entry-meta-wrap clearfix">
+        <ul class="entry-meta">
+          <li class="entry-date">
+            <a href="{{url}}">{{date published_at format="MMMM DD, YYYY"}}</a>
+          </li>
+        </ul>
+      </div>
+    </article>
+  </div>
+{{/foreach}}

@@ -12,13 +12,35 @@
     initTwittslider();
     initOwlCarousel();
     wow.init();
+		  var InstafeedRow = new Instafeed({
+		      target: 'instafeed-row',
+		      get: 'user',
+					userId: '1524775598',
+		      accessToken: '1524775598.2b52e9f.f5e4d195543b4a8ca0bdfc753fba2829',
+		      resolution: 'low_resolution',
+		      limit: '6',
+		      template: '<li class="instagram-item"><a target="_blank" href="{{link}}"><img class="instagram-img" alt="Instagram Image" src="{{image}}"/></a></li>'
+		  });
+
+		  var InstafeedGrid = new Instafeed({
+		      target: 'instafeed-grid',
+		      get: 'user',
+					userId: '1524775598',
+		      accessToken: '1524775598.2b52e9f.f5e4d195543b4a8ca0bdfc753fba2829',
+		      resolution: 'low_resolution',
+		      limit: '9',
+		      template: '<li class="instagram-item"><a target="_blank" href="{{link}}"><img class="instagram-img" alt="Instagram Image" src="{{image}}"/></a></li>'
+		  });
+
+		  InstafeedRow.run();
+		  InstafeedGrid.run();
 
   });
 
 
   $(window).resize(function(){
     container_full_height_init();
-    
+
     var windowWidth = $(window).width();
     if (windowWidth <= 974) {
       $('.dropdown-toggle').attr('data-toggle', 'dropdown');

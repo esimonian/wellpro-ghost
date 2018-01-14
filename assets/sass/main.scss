@@ -8,7 +8,6 @@
 
 // 2. Vendors
 @import
-	'vendor/responsive',
 	'vendor/icons',
 	'vendor/sliders',
 	'vendor/shortcodes';
@@ -37,7 +36,7 @@
 	'pages/blog',
 	'pages/portfolio',
 	'pages/post';
-
+@import 'vendor/responsive';
 // 7. Hacks / Fixes
 @import
 	'shame';

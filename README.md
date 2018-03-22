@@ -18,7 +18,9 @@ The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which
 ```bash
 $ gulp zip
 ```
-
+```bash
+nodemon current/index.js --watch content/themes/soho
+```
 ---
 
 ## Auto Release Deployment

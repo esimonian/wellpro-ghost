@@ -28,7 +28,7 @@
 			{{#if @labs.subscribers}}
 				<a href="{{@blog.url}}/subscribe/">Subscribe</a>
 			{{else}}
-				<a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" target="_blank" rel="noopener"><i class="fa fa-rss"></i></a>
+				<a href="{{@blog.url}}/rss/" target="_blank" rel="noopener"><i class="fa fa-rss"></i></a>
 			{{/if}}
 			{{#if @blog.facebook}}
 				<a href="{{facebook_url}}" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a>

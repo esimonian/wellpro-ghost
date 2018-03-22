@@ -1,7 +1,7 @@
 {
 	"name": "soho",
 	"description": "A boilerplate for ghost themes",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"engines": {
 		"ghost": ">=1.2.0"
 	},
